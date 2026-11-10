@@ -59,7 +59,7 @@ void displayproduct() {
         fclose(fptr);
     }
     else{
-        printf("The Product Inventory Is Empty!");
+        printf("Error:File Does Not Exists!\n");
         return;
     }
 }
@@ -86,7 +86,7 @@ void searchproduct() {
         }
     }
     else{
-        printf("The Product Inventory Is Empty!");
+        printf("Error:File Does Not Exists!\n");
         return;
     }
 }
