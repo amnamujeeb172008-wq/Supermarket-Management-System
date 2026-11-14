@@ -25,8 +25,8 @@ int main(){
             case 5: deleteproduct(); break;
             //case 6: billing(); break;
             case 7: lowstockalert(); break;
-            //case 8: expirymanagement(); break;
-            //case 9: registercustomer(); break;
+            case 8: expirymanagement(); break;
+            case 9: registercustomer(); break;
             //case 10: salesreport(); break;
             case 0: printf("ThankYou Goodbye!"); break;
             default: printf("Invalid Choice!\n");

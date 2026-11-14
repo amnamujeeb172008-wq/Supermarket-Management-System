@@ -7,6 +7,12 @@
 
 #define LOW_STOCK 10
 
+#define NEAR_EXPIRY_DAYS      7      
+#define NEAR_EXPIRY_DISCOUNT  0.30f  
+#define INVENTORY_FILE "inventory.dat"
+#define EXPIRED_FILE   "expired.dat"
+#define CUSTOMER_FILE  "customers.dat"
+
 typedef struct {
     int day;
     int month;
@@ -21,6 +27,13 @@ typedef struct {
     Date expiry;
 } Product;
 
+typedef struct {
+    int id;
+    char name[50];
+    char phone[16];
+    float totalSpent;
+} Customer;
+
 void addproduct();
 void displayproduct();
 void searchproduct();
@@ -31,5 +44,12 @@ void billing();
 void expirymanagement();
 void registercustomer();
 void salesreport();
+
+int   daysLeft(Date d);                       
+int   validDate(Date d);                      
+int   findCustomer(int id, Customer *c);      
+int   findCustomerByPhone(const char *phone, Customer *c);
+float loyaltyDiscount(float totalSpent);      
+int   updateCustomerSpent(int id, float amount);
 
 #endif
